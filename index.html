@@ -3,153 +3,222 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Outils UEMA / VB-MAPP</title>
+<title>Outils UEMA</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&family=Open+Dyslexic&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root {
-    --p-manding: #FF6B6B;
-    --p-tacting: #4ECDC4;
-    --p-listener: #45B7D1;
-    --p-vpMts: #96CEB4;
-    --p-play: #FFEEAD;
-    --p-social: #D4A5A5;
-    --p-imitation: #9B59B6;
-    --p-echoic: #3498DB;
-    --p-vocal: #E67E22;
-    --p-intraverbal: #2ECC71;
-    --p-group: #F1C40F;
-    --p-classroom: #E74C3C;
-    --bg-main: #F8F9FA;
-    --text-color: #2C3E50;
-    --border-radius: 12px;
+    --bg-page: #F7F5F0;
+    --navy-header: #1E4267;
+    --card-bg: #FFFFFF;
+    --text-main: #1A2B3C;
+    --text-muted: #5A6B7C;
+    --accent-blue: #2563EB;
+    --border-radius: 16px;
 }
 
+* { box-sizing: border-box; font-family: 'Nunito', sans-serif; }
+
 body {
-    font-family: 'Nunito', sans-serif;
-    background-color: var(--bg-main);
-    color: var(--text-color);
+    background-color: var(--bg-page);
+    color: var(--text-main);
     margin: 0;
     padding: 0;
 }
 
-.font-dyslexic { font-family: 'Open Dyslexic', sans-serif !important; }
-.font-fredoka { font-family: 'Fredoka', cursive !important; }
-
 header {
-    background: white;
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    background-color: var(--navy-header);
+    padding: 0.8rem 1.5rem;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-}
-
-.logo {
-    font-family: 'Fredoka', cursive;
-    font-size: 1.8rem;
-    color: #3B82F6;
-    font-weight: 700;
+    gap: 1rem;
+    overflow-x: auto;
 }
 
 nav {
     display: flex;
-    gap: 1rem;
+    gap: 0.5rem;
+    width: 100%;
 }
 
 nav button {
-    padding: 0.6rem 1.2rem;
+    background: transparent;
+    color: #DCE6F1;
     border: none;
-    border-radius: var(--border-radius);
-    background: #EDF2F7;
-    color: #4A5568;
-    font-weight: 600;
+    padding: 0.6rem 1rem;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.95rem;
     cursor: pointer;
-    transition: all 0.2s ease;
+    white-space: nowrap;
 }
 
-nav button.active, nav button:hover {
-    background: #3B82F6;
-    color: white;
+nav button.active {
+    background-color: #FFFFFF;
+    color: var(--navy-header);
 }
 
 main {
-    padding: 2rem;
-    max-width: 1200px;
+    padding: 1.5rem;
+    max-width: 800px;
     margin: 0 auto;
 }
 
-.card {
-    background: white;
-    border-radius: var(--border-radius);
-    padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+.badge-tag {
+    display: inline-block;
+    background: #EBF3FA;
+    color: #2B5278;
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin: 0 0 0.5rem 0;
+    color: var(--navy-header);
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.4;
     margin-bottom: 1.5rem;
 }
 
-.grid-2 {
+.action-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.action-icon { font-size: 1.5rem; }
+
+.action-content h3 {
+    margin: 0 0 0.3rem 0;
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.action-content p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.section-title {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    margin: 2rem 0 1rem 0;
+}
+
+.stats-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
+    gap: 1rem;
+    margin-bottom: 1rem;
 }
 
-.btn-primary {
-    background: #3B82F6;
-    color: white;
-    border: none;
-    padding: 0.8rem 1.5rem;
+.stat-card {
+    background: var(--card-bg);
     border-radius: var(--border-radius);
-    font-weight: 700;
-    cursor: pointer;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
-.btn-primary:hover {
-    background: #2563EB;
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--navy-header);
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-muted);
 }
 </style>
 </head>
 <body>
 
 <header>
-    <div class="logo">UEMA</div>
     <nav>
-        <button class="active" onclick="switchTab('face')">🎯 Fiche face à face</button>
-        <button onclick="switchTab('cotation')">📊 Grille de cotation</button>
-        <button onclick="switchTab('etiquettes')">🏷️ Étiquettes</button>
+        <button class="active" onclick="switchTab('accueil')">Accueil</button>
+        <button onclick="switchTab('suivi')">Suivi des enfants</button>
+        <button onclick="switchTab('outils')">Outils classe</button>
+        <button onclick="switchTab('equipe')">Équipe</button>
     </nav>
 </header>
 
 <main>
-    <section id="tab-face" class="card">
-        <h2>🎯 Fiche face à face</h2>
-        <p>Gestion et suivi des séances individuelles UEMA / VB-MAPP.</p>
-        <div class="grid-2">
-            <div>
-                <label><strong>Domaine VB-MAPP :</strong></label><br>
-                <select style="width: 100%; padding: 0.5rem; margin-top: 0.5rem; border-radius: 6px;">
-                    <option>Manding (Demandes)</option>
-                    <option>Tacting (Dénomination)</option>
-                    <option>Listener Responding (Réceptif)</option>
-                    <option>VP-MTS (Visuo-perceptif)</option>
-                    <option>Intraverbal</option>
-                </select>
+    <section id="tab-accueil">
+        <div class="badge-tag">Espace privé • réservé à l'équipe</div>
+        <h1>Nos outils, réunis au même endroit</h1>
+        <p class="subtitle">Pilotez les priorités des enfants, gardez une trace des progrès et retrouvez les outils de l'équipe sans vous perdre dans une longue liste d'onglets.</p>
+
+        <div class="action-card">
+            <div class="action-icon">🎯</div>
+            <div class="action-content">
+                <h3>Gérer le pilotage</h3>
+                <p>Ajouter, faire avancer ou archiver les priorités de chaque enfant.</p>
             </div>
-            <div>
-                <label><strong>Élève :</strong></label><br>
-                <input type="text" placeholder="Nom ou initiales de l'élève" style="width: 95%; padding: 0.5rem; margin-top: 0.5rem; border-radius: 6px;">
+        </div>
+
+        <div class="action-card">
+            <div class="action-icon">⚡</div>
+            <div class="action-content">
+                <h3>Observation minute</h3>
+                <p>Ajouter une trace terrain en quelques secondes depuis l'iPad ou le téléphone.</p>
+            </div>
+        </div>
+
+        <div class="section-title">Tableau de bord de la semaine</div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">32</div>
+                <div class="stat-label">priorités actives</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">0</div>
+                <div class="stat-label">observations cette semaine</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">2</div>
+                <div class="stat-label">à démarrer</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">1</div>
+                <div class="stat-label">à généraliser</div>
             </div>
         </div>
     </section>
 
-    <section id="tab-cotation" class="card" style="display:none;">
-        <h2>📊 Grille de cotation</h2>
-        <p>Suivi de l'acquisition des jalons VB-MAPP.</p>
+    <section id="tab-suivi" style="display:none;">
+        <h1>Suivi des enfants</h1>
+        <p class="subtitle">Sélectionnez un élève pour consulter son profil et ses objectifs VB-MAPP.</p>
     </section>
 
-    <section id="tab-etiquettes" class="card" style="display:none;">
-        <h2>🏷️ Générateur d'étiquettes</h2>
-        <p>Création d'étiquettes multi-écritures pour les plans de travail.</p>
+    <section id="tab-outils" style="display:none;">
+        <h1>Outils classe</h1>
+        <p class="subtitle">Générateurs d'étiquettes, fiches d'observation et grilles de cotation.</p>
+    </section>
+
+    <section id="tab-equipe" style="display:none;">
+        <h1>Équipe</h1>
+        <p class="subtitle">Gestion des accès et partage des observations.</p>
     </section>
 </main>
 
